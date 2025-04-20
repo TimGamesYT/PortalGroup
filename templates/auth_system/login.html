@@ -1,0 +1,20 @@
+{% include "base.html" %}
+{% block content %}
+{% load static %}
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<div>
+        <form method="post">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="login" required>
+         <input type="password" name="password" placeholder="password" required>
+        <button type="submit">"Залогінитися"</button>
+        </form>
+</div>   
+     
+{% if messages %}
+    {% for message in messages %}
+        <p>{{ message }}</p>
+    {% endfor %}
+    {% endif %}
+{% endblock %}
