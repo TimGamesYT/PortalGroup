@@ -1,20 +1,17 @@
-{% include "base.html" %}
+{% extends "base.html" %}
 {% block content %}
-{% load static %}
-        <link rel="stylesheet" href="{% static 'css/style.css' %}">
-
-<div>
+    <div>
         <form method="post">
-        {% csrf_token %}
-        <input type="text" name="username" placeholder="login" required>
-         <input type="password" name="password" placeholder="password" required>
-        <button type="submit">"Залогінитися"</button>
+            {% csrf_token %}
+            <input type="text" name="username" placeholder="login" required>
+            <input type="password" name="password" placeholder="password" required>
+            <button type="submit">Увійти</button>
         </form>
-</div>   
+    </div>   
      
-{% if messages %}
-    {% for message in messages %}
-        <p>{{ message }}</p>
-    {% endfor %}
+    {% if messages %}
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
     {% endif %}
 {% endblock %}
