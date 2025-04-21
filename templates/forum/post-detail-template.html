@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h3>{{ post.short_description }}</h3>
+    <p><strong>{{ post.author.username }}</strong> {{ post.created_at }}</p>
+
+    <a href="{% url 'edit-post' post.pk %}"><button>Редагувати</button></a>
+    <a href="{% url 'delete-post' post.pk %}"><button>Видалити</button></a>
+
+    <p>{{ post.content }}</p>
+
+    <hr>
+
+    <h3>Коментарі:</h3>
+    {% for comment in post.comments.all %}
+        <div class="comment">
+            <p><strong>{{ comment.author.username }}</strong> {{ comment.created_at }}</p>
+            <p>{{ comment.content }}</p>
+            <a href="{% url 'edit-comment' comment.pk %}"><button>Редагувати</button></a>
+            <a href="{% url 'delete-comment' comment.pk %}"><button>Видалити</button></a>
+        </div>
+
+        <br>
+    {% endfor %}
+
+    <h3>Створити свій коментар:</h3>
+    <form method="POST" action="{% url 'create-comment' post.pk %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Створити</button>
+    </form>
+    
+{% endblock %}

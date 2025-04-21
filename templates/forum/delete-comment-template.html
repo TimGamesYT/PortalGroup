@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Видалити коментар</h2>
+    <p>Ви впевнені що хочете видалити цей коментар?</p>
+    <form method="POST" action="{% url 'delete-comment' comment.pk %}">
+        {% csrf_token %}
+        <button type="submit">Видалити</button>
+    </form>
+    <a href="{% url 'post-detail' comment.post.pk %}"><button>Відмінити</button></a>
+{% endblock %}

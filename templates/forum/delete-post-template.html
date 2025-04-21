@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Видалити пост</h2>
+    <p>Ви впевнені що хочете видалити цей пост?</p>
+    <form method="POST" action="{% url 'delete-post' post.pk %}">
+        {% csrf_token %}
+        <button type="submit">Видалити</button>
+    </form>
+    <a href="{% url 'post-detail' post.pk %}"><button>Відмінити</button></a>
+{% endblock %}
