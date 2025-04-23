@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ question.text }}</title>
+</head>
+<body>
+    <h1>{{ question.text }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+    <a href="{% url 'index' %}">Back to questions</a>
+</body>
+</html>
