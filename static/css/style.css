@@ -1,0 +1,25 @@
+.big_title {
+    font: bold 50px "Bahnschrift Light";
+}
+
+.small_title {
+    font: 35px "Bahnschrift Light";
+}
+
+.section_button {
+    background-color: rgb(0, 0, 0, 0.1);
+    border: 0px;
+    padding: 10px 50px 10px 50px;
+    font: bold 40px "Bahnschrift Light";
+    margin-left: -4px;
+}
+
+.section_button:checked {
+    background-color: rgb(0, 0, 0, 0.2);
+}
+.section_button:hover {
+    background-color: rgb(0, 0, 0, 0.2);
+}
+.section_button:active {
+     background-color: rgb(0, 0, 0, 0.3);
+}
