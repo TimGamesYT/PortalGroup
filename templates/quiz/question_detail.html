@@ -1,3 +1,7 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,3 +17,4 @@
     <a href="{% url 'index' %}">Back to questions</a>
 </body>
 </html>
+{% endblock %}
