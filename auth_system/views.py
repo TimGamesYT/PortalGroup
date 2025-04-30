@@ -20,7 +20,7 @@ def login_view(request):
         if user:
             login(request, user)
             
-            return redirect('homepage') # Треба створити юрл(не знаю в якому файлі його розмістити)
+            return redirect('homepage')
         else:
             messages.error(request, "Invalid username or password")
 
@@ -29,4 +29,4 @@ def login_view(request):
 def logout_view(request):
     logout(request)
 
-    return redirect('homepage') # Треба створити юрл(не знаю в якому файлі його розмістити)
+    return redirect('homepage')
