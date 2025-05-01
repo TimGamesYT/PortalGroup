@@ -25,6 +25,7 @@
             <a href="{% url 'logout' %}"><button class="section_button">Вийти</button></a>
             {% else %}
             <a href="{% url 'login' %}"><button class="section_button">Увійти</button></a>
+            <a href="{% url 'register' %}"><button class="section_button">заєреструватися</button></a>
             <!-- До Паші: додай тут реєстрацію -->
             {% endif %}
         </nav>
