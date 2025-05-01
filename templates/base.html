@@ -26,14 +26,10 @@
             {% if request.user.is_authenticated %}
                 <a href="{% url 'logout' %}"><button class="section_button">Вийти</button></a>
             {% else %}
-<<<<<<< HEAD
             <a href="{% url 'login' %}"><button class="section_button">Увійти</button></a>
             <a href="{% url 'register' %}"><button class="section_button">заєреструватися</button></a>
-            <!-- До Паші: додай тут реєстрацію -->
-=======
-                <a href="{% url 'login' %}"><button class="section_button">Увійти</button></a>
-                <!-- До Паші: додай тут реєстрацію -->
->>>>>>> 963bcd277bb5d9e076d1466f25db5d826fe375a6
+
+
             {% endif %}
         </nav>
 
