@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from . import forms, models
+from notifications import models as notification_models
 from django.contrib import messages 
 from django.contrib.auth.decorators import login_required
 
@@ -94,6 +95,11 @@ def create_comment_view(request, pk):
                                                     author=author,
                                                     post=post)
             
+            notification = notification_models.Notification.objects.create(user=post.author,
+                                                              notification_type=notification_models.NotificationType.objects.get(name="Answer to post"),
+                                                              message=f"Вам надійшов новий коментар до вашого посту: {post.short_description}")
+            
+            notification.save()
             comment.save()
 
             return redirect('post-detail', pk=pk)

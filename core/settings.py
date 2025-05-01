@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'auth_system',
     'forum',
     'quiz',
+    'notifications',
 ]
 
 MIDDLEWARE = [
