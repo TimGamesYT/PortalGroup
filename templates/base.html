@@ -28,17 +28,18 @@
                 <a href="{% url 'logout' %}"><button class="section_button">Вийти</button></a>
             {% else %}
             <a href="{% url 'login' %}"><button class="section_button">Увійти</button></a>
-            <a href="{% url 'register' %}"><button class="section_button">заєреструватися</button></a>
-
+            <a href="{% url 'register' %}"><button class="section_button">Зареєструватися</button></a>
 
             {% endif %}
         </nav>
+
+        <button id="theme-toggle" class="section_button">Переключити тему</button>
 
         {% block header %}
 
         {% endblock %}
     </header>
-    
+
     {% block content %}
 
     {% endblock %}
@@ -48,5 +49,6 @@
 
         {% endblock %}
     </footer>
+    <script src="{% static 'script/script.js' %}"></script>
 </body>
 </html>
