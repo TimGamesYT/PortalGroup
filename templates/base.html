@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% load static %}
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        {% if request.session.theme == 'dark' %}
+            <link rel="stylesheet" href="{% static 'css/dark-theme.css' %}">
+        {% else %}
+            <link rel="stylesheet" href="{% static 'css/light-theme.css' %}">
+        {% endif %}
     <title>Team über IT-Spezialisten</title>
 </head>
 

@@ -29,31 +29,3 @@
 .section_button:active {
     background-color: rgb(0, 0, 0, 0.3);
 }
-
-body.light-theme {
-            background-color: #ffffff;
-            color: #333333;
-        }
-
-        body.light-theme header {
-            background-color: #f8f9fa;
-        }
-
-        body.light-theme .section_button {
-            background-color: #007bff;
-            color: #ffffff;
-        }
-
-        body.dark-theme {
-            background-color: #121212;
-            color: #e0e0e0;
-        }
-
-        body.dark-theme header {
-            background-color: #1f1f1f;
-        }
-
-        body.dark-theme .section_button {
-            background-color: #333333;
-            color: #ffffff;
-        }
