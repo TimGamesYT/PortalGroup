@@ -4,8 +4,11 @@ from django.db import models
 # Create your models here.
 
 class Question(models.Model):
+    QUUESTION_CHOISES = [('text', 'Text'),
+                        ('choice', 'Choice'),
+                        ]
     text = models.CharField(max_length=200)
-    question_type = models.CharField(max_length=20, choices=[('text', 'Text'), ('choice', 'Choice')])
+    question_type = models.CharField(max_length=20, choices=QUUESTION_CHOISES, default='text')
 
     def __str__(self):
         return self.text
