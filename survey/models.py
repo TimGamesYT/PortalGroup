@@ -2,12 +2,18 @@ from django.db import models
 
 
 # Create your models here.
+QUESTION_CHOICES = [('text', 'Text'),
+                    ('choice', 'Choice'),
 
+                    ]
 class Question(models.Model):
     QUUESTION_CHOISES = [('text', 'Text'),
                         ('choice', 'Choice'),
                         ]
     text = models.CharField(max_length=200)
+
+    question_type = models.CharField(max_length=20, choices=QUESTION_CHOICES, default=text)
+
     question_type = models.CharField(max_length=20, choices=QUUESTION_CHOISES, default='text')
 
     def __str__(self):
