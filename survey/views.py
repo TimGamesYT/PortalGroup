@@ -7,9 +7,9 @@ from .forms import ResponseForm
 
 # Create your views here.
 
-def index(request):
+def question_list(request):
     questions = Question.objects.all()
-    return render(request, "quiz/quiz.html", {"questions": questions})
+    return render(request, "survey/survey.html", {"questions": questions})
 
 
 def question_detail(request, question_id):
@@ -24,4 +24,4 @@ def question_detail(request, question_id):
     else:
         form = ResponseForm(question=question)
 
-    return render(request, 'quiz/question_detail.html', {'question': question, 'form': form})
+    return render(request, 'survey/question_detail.html', {'question': question, 'form': form})

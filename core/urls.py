@@ -21,6 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('auth_system.urls')),
     path('forum/', include('forum.urls')),
-    path('quiz/', include('quiz.urls')),
+    path('survey/', include('survey.urls')),
 
 ]
