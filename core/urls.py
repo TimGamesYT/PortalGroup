@@ -22,5 +22,5 @@ urlpatterns = [
     path('', include('auth_system.urls')),
     path('forum/', include('forum.urls')),
     path('survey/', include('survey.urls')),
-
+    path('notifications/', include('notifications.urls')),
 ]
