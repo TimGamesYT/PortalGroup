@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <h1>Портфоліо</h1>
+        {{ user.username }} - {{ user.email }}
+{% endblock %}

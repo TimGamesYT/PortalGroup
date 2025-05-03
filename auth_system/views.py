@@ -62,5 +62,4 @@ def register(request):
         form = RegistrationForm()
     return render(request, 'auth_system/register.html', {'form': form})
 
-def profile(request):
-    pass
+
