@@ -4,6 +4,8 @@ from django.contrib import messages
 from django.contrib.auth.models import User
 from .forms import RegistrationForm
 
+def profile(request):
+    return render(request, 'auth_system/profile.html')
 
 def homepage(request):
     return render(request, 'homepage.html')

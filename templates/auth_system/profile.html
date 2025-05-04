@@ -4,4 +4,15 @@
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
         <h1>Портфоліо</h1>
         {{ user.username }} - {{ user.email }}
+        {{ user.first_name }} {{ user.last_name }}
+        <h2>Ваші пости:</h2>
+        {% for post in posts %}
+            <div class="post">
+                <h3>{{ post.title }}</h3>
+                <p>{{ post.content }}</p>
+                <p>Дата: {{ post.created_at }}</p>
+            </div>
+        {% empty %}
+            <p>У вас немає постів.</p>
+        {% endfor %}
 {% endblock %}
