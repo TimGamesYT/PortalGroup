@@ -5,15 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% load static %}
-        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/light-theme.css' %}" id="light-theme">
+    <link rel="stylesheet" href="{% static 'css/dark-theme.css' %}" id="dark-theme" disabled>
     <title>Team über IT-Spezialisten</title>
 </head>
 
-<body>
+<body class="light-theme">
     <header>
         <h1 class="big_title">Team über IT-Spezialisten</h1>
         <h1 class="small_title">Ласкаво просимо до порталу команди "Team über IT-Spezialisten"!</h1>
-
         <hr>
         <nav>
             <a href="{% url 'homepage' %}"><button class="section_button">Домашня сторінка</button></a>
@@ -33,26 +34,28 @@
             
 
             <a href="{% url 'register' %}"><button class="section_button">Зареєструватися</button></a>
-
             {% endif %}
         </nav>
 
-        <button id="theme-toggle" class="section_button">Переключити тему</button>
+        <!-- Перемикач теми з використанням зображень -->
+        <div class="theme-switch">
+            <img id="theme-toggle" src="{% static 'img/moon.png' %}" alt="Theme Toggle"
+                 data-dark-src="{% static 'img/moon.png' %}"
+                 data-light-src="{% static 'img/sun.png' %}">
+        </div>
 
         {% block header %}
-
         {% endblock %}
     </header>
 
     {% block content %}
-
     {% endblock %}
 
     <footer>
         {% block footer %}
-
         {% endblock %}
     </footer>
-    <script src="{% static 'script/script.js' %}"></script>
+
+    <script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>

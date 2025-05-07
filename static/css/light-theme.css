@@ -1,0 +1,30 @@
+body {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+header, footer {
+    background-color: #f0f0f0;
+    color: #333333;
+}
+
+.section_button {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #000000;
+}
+
+.section_button:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.theme-switch {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.theme-switch:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.theme-switch:active {
+    background-color: rgba(0, 0, 0, 0.3);
+}
