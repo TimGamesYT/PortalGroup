@@ -1,5 +1,6 @@
 * {
     font: bold 20px "Bahnschrift Light";
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .big_title {
@@ -11,21 +12,54 @@
 }
 
 .section_button {
-    background-color: rgb(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.1);
     border: 0px;
     padding: 10px 50px 10px 50px;
     font: bold 40px "Bahnschrift Light";
     margin-left: -4px;
-}
-
-.section_button:checked {
-    background-color: rgb(0, 0, 0, 0.2);
+    cursor: pointer;
 }
 
 .section_button:hover {
-    background-color: rgb(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 .section_button:active {
-    background-color: rgb(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.theme-switch {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.theme-switch:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.theme-switch:active {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.theme-switch img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.theme-switch img:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.3s;
 }
