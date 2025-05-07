@@ -95,8 +95,9 @@ def create_comment_view(request, pk):
                                                     author=author,
                                                     post=post)
             
+            notification_type, created = notification_models.NotificationType.objects.get_or_create(name="Answer to post")
             notification = notification_models.Notification.objects.create(user=post.author,
-                                                              notification_type=notification_models.NotificationType.objects.get(name="Answer to post"),
+                                                              notification_type=notification_type,
                                                               message=f"Вам надійшов новий коментар до вашого посту: {post.short_description}")
             
             notification.save()
