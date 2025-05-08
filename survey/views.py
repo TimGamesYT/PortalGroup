@@ -20,7 +20,7 @@ def question_detail(request, question_id):
             response = form.save(commit=False)
             response.question = question
             response.save()
-            return redirect("index")
+            return redirect("survey")
     else:
         form = ResponseForm(question=question)
 
