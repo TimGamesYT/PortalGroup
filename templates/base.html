@@ -17,7 +17,7 @@
         <h1 class="small_title">Ласкаво просимо до порталу команди "Team über IT-Spezialisten"!</h1>
         <hr>
         <nav>
-            <a href="{% url 'homepage' %}"><button class="section_button">Домашня сторінка</button></a>
+            <a href="{% url 'homepage' %}"><button class="section_button">Головна</button></a>
             <a href="{% url 'novations' %}"><button class="section_button">Новини</button></a>
             <a href="{% url 'announs' %}"><button class="section_button">Оголошення</button></a>
             <a href="{% url 'survey' %}"><button class="section_button">Опитування</button></a>
@@ -26,23 +26,22 @@
             
             {% if request.user.is_authenticated %}
                 <a href="{% url 'logout' %}"><button class="section_button">Вийти</button></a>
-                <a href="{% url 'portfolio' %}"><button class="section_button">профіль</button></a>
+
+                <a href="{% url 'portfolio' %}"><button class="section_button">Профіль</button></a>
+
             {% else %}
             <a href="{% url 'login' %}"><button class="section_button">Увійти</button></a>
 
-            <a href="{% url 'register' %}"><button class="section_button">заєреструватися</button></a>
-            
-
             <a href="{% url 'register' %}"><button class="section_button">Зареєструватися</button></a>
             {% endif %}
-        </nav>
 
-        <!-- Перемикач теми з використанням зображень -->
-        <div class="theme-switch">
-            <img id="theme-toggle" src="{% static 'img/moon.png' %}" alt="Theme Toggle"
-                 data-dark-src="{% static 'img/moon.png' %}"
-                 data-light-src="{% static 'img/sun.png' %}">
-        </div>
+            <!-- Перемикач теми з використанням зображень -->
+            <div class="theme-switch">
+                <img id="theme-toggle" src="{% static 'img/moon.png' %}" alt="Theme Toggle"
+                     data-dark-src="{% static 'img/moon.png' %}"
+                     data-light-src="{% static 'img/sun.png' %}">
+            </div>
+        </nav>
 
         {% block header %}
         {% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <h2>Видалити опитування</h2>
+    <p>Ви впевнені що хочете видалити це опитування?</p>
+    <form method="POST" action="{% url 'delete-survey' survey.pk %}">
+        {% csrf_token %}
+        <button type="submit">Видалити</button>
+    </form>
+    <a href="{% url 'survey-detail' survey.survey.pk %}"><button>Відмінити</button></a>
+{% endblock %}
