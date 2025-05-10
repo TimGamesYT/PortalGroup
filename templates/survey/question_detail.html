@@ -12,9 +12,9 @@
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Submit</button>
+        <button type="submit">Надіслати</button>
     </form>
-    <a href="{% url 'index' %}">Back to questions</a>
+    <a href="{% url 'survey' %}">Повернутися до опитування</a>
 </body>
 </html>
 {% endblock %}
