@@ -2,8 +2,6 @@
 {% block content %}
 {% load static %}
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
-
-        
         <img src="{{ user.profile.avatar.url }}" alt="Фото" class="avatar">
         <h1>Портфоліо</h1>
         {{ user.username }} - {{ user.email }}
