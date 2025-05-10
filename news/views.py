@@ -1,7 +1,11 @@
 from django.shortcuts import render
+from django.views.generic import ListView
+from .models import Novation, Announ
 
-def novations(request):
-    return render(request, 'news/novations.html')
+class NovationsListView(ListView):
+    model = Novation
+    context_object_name = "novations"
 
-def announs(request):
-    return render(request, 'news/announs.html')
+class AnnounsListView(ListView):
+    model = Announ
+    context_object_name = "announs"

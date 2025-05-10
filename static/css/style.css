@@ -11,11 +11,22 @@
     font: 35px "Bahnschrift Light";
 }
 
+nav {
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 0 5px 5px 5px;
+    border-radius: 5px;
+    margin: 0 10px 0 10px;
+}
+
 .section_button {
     background-color: rgba(0, 0, 0, 0.1);
     border: 0px;
-    padding: 10px 50px 10px 50px;
-    font: bold 40px "Bahnschrift Light";
+    padding: 10px 40px 10px 40px;
+    margin: 0px 5px 0px 5px;
+    font: bold 18px "Bahnschrift Light";
     margin-left: -4px;
     cursor: pointer;
 }
@@ -30,12 +41,10 @@
 
 .theme-switch {
     display: inline-flex;
-    align-items: center;
-    justify-content: center;
     padding: 5px;
     border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s;
+    background-color: rgba(0, 0, 0, 0.1);
     margin: 10px;
     cursor: pointer;
 }
