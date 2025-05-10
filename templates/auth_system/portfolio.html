@@ -2,17 +2,28 @@
 {% block content %}
 {% load static %}
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'img' %}">
         <h1>Портфоліо</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="file" name="image">
+            <button type="submit">Завантажити</button>
+        </form>
+        
         {{ user.username }} - {{ user.email }}
         {{ user.first_name }} {{ user.last_name }}
         <h2>Ваші пости:</h2>
-        {% for post in posts %}
-            <div class="post">
-                <h3>{{ post.title }}</h3>
+
+        <div class="container-list">
+        {% for post in my_posts %}
+            <div class="profile-forum-box">
+                <h3>{{ post.short_description }}</h3>
                 <p>{{ post.content }}</p>
                 <p>Дата: {{ post.created_at }}</p>
             </div>
         {% empty %}
             <p>У вас немає постів.</p>
         {% endfor %}
+        </div>
+        
 {% endblock %}
