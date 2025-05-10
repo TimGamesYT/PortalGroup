@@ -3,9 +3,8 @@ from django.contrib.auth import login, logout, authenticate
 from django.contrib import messages
 from django.contrib.auth.models import User
 from .forms import RegistrationForm
+from forum.models import Post
 
-def profile(request):
-    return render(request, 'auth_system/profile.html')
 
 def homepage(request):
     return render(request, 'homepage.html')
@@ -58,4 +57,11 @@ def register(request):
         form = RegistrationForm()
     return render(request, 'auth_system/register.html', {'form': form})
 
-
+def portfolio(request):
+    my_posts = Post.objects.filter(author=request.user)
+    avatar = None
+    context = {
+        'my_posts': my_posts,
+        'photo': avatar
+    }
+    return render(request, 'auth_system/portfolio.html', context)
