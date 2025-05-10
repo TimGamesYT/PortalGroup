@@ -23,4 +23,5 @@ urlpatterns = [
     path('forum/', include('forum.urls')),
     path('survey/', include('survey.urls')),
     path('notifications/', include('notifications.urls')),
+    path('news/', include('news.urls')),
 ]

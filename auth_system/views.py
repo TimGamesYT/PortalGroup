@@ -9,12 +9,6 @@ from forum.models import Post
 def homepage(request):
     return render(request, 'homepage.html')
 
-def novations(request):
-    return render(request, 'novations.html')
-
-def announs(request):
-    return render(request, 'announs.html')
-
 def login_view(request):
     if request.method == "POST":
         username = request.POST.get('username')

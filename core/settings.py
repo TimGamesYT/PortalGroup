@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'forum',
     'survey',
     'notifications',
+    'news',
 ]
 
 MIDDLEWARE = [
