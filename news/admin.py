@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import Novation, Announ
 
-# Register your models here.
+admin.site.register(Novation)
+admin.site.register(Announ)
