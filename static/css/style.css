@@ -79,3 +79,7 @@
     margin-right: 24px;
     margin-bottom: 0px;
 }
+.avatar{
+    max-width: 20%; 
+    border-radius: 50%; 
+}

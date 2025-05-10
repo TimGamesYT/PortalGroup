@@ -2,14 +2,10 @@
 {% block content %}
 {% load static %}
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
-        <link rel="stylesheet" href="{% static 'img' %}">
-        <h1>Портфоліо</h1>
-        <form method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-            <input type="file" name="image">
-            <button type="submit">Завантажити</button>
-        </form>
+
         
+        <img src="{{ user.profile.avatar.url }}" alt="Фото" class="avatar">
+        <h1>Портфоліо</h1>
         {{ user.username }} - {{ user.email }}
         {{ user.first_name }} {{ user.last_name }}
         <h2>Ваші пости:</h2>

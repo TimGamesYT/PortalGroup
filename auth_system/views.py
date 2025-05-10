@@ -59,7 +59,7 @@ def register(request):
 
 def portfolio(request):
     my_posts = Post.objects.filter(author=request.user)
-    avatar = None
+    avatar = 'static/img/default_avatar.png'
     context = {
         'my_posts': my_posts,
         'photo': avatar
