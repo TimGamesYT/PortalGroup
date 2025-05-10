@@ -16,6 +16,7 @@ def question_detail(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
     form = ResponseForm(question, request.POST or None)
     if request.method == "POST":
+
         if form.is_valid():
             Answer.objects.create(
             question=question,
