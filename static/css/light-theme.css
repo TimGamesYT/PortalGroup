@@ -1,4 +1,4 @@
-body {
+/* body {
     background-color: #ffffff;
     color: #000000;
 }
@@ -27,4 +27,74 @@ header, footer {
 
 .theme-switch:active {
     background-color: rgba(0, 0, 0, 0.3);
+} */
+-----------------------------
+/* Аквамаринова тема */
+:root {
+    --primary-color: #69e2e4;
+    --secondary-color: #00ced1;
+    --background-color: #f5f5f5;
+    --text-color: #333333;
+    --shadow-color: rgba(127, 255, 212, 0.5);
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+header, footer {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+.section_button {
+    background-color: rgba(0, 119, 204, 0.1);
+    color: var(--text-color);
+    border: 1px solid var(--secondary-color);
+    box-shadow: 0 0 10px var(--shadow-color);
+}
+
+.section_button:hover {
+    background-color: rgba(0, 119, 204, 0.2);
+    box-shadow: 0 0 15px var(--shadow-color);
+}
+
+.theme-switch {
+    background-color: rgba(0, 119, 204, 0.1);
+    border: 1px solid var(--secondary-color);
+    box-shadow: 0 0 10px var(--shadow-color);
+}
+
+.theme-switch:hover {
+    background-color: rgba(0, 119, 204, 0.2);
+    box-shadow: 0 0 15px var(--shadow-color);
+}
+
+.theme-switch:active {
+    background-color: rgba(0, 119, 204, 0.3);
+    box-shadow: 0 0 20px var(--shadow-color);
+}
+
+nav {
+    background-color: rgba(0, 119, 204, 0.1);
+    border: 1px solid var(--secondary-color);
+    box-shadow: 0 0 10px var(--shadow-color);
+}
+
+.profile-forum-box {
+    background-color: rgba(0, 119, 204, 0.1);
+    border: 1px solid var(--secondary-color);
+    box-shadow: 0 0 10px var(--shadow-color);
+}
+
+.container-list {
+    background-color: rgba(0, 119, 204, 0.1);
+    border: 1px solid var(--secondary-color);
+    box-shadow: 0 0 10px var(--shadow-color);
+}
+
+.avatar {
+    border: 1px solid var(--secondary-color);
+    box-shadow: 0 0 10px var(--shadow-color);
 }

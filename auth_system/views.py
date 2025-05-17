@@ -62,6 +62,7 @@ def portfolio(request):
     avatar = 'profile/default_avatar.png'
     context = {
         'my_posts': my_posts,
-        'photo': avatar
+        'photo': avatar,
+        'user': request.user,
     }
     return render(request, 'auth_system/portfolio.html', context)
