@@ -5,10 +5,6 @@ from django.contrib.auth.models import User
 from .forms import RegistrationForm
 from forum.models import Post
 
-
-def homepage(request):
-    return render(request, 'homepage.html')
-
 def login_view(request):
     if request.method == "POST":
         username = request.POST.get('username')
@@ -18,7 +14,7 @@ def login_view(request):
         if user:
             login(request, user)
             
-            return redirect('homepage')
+            return redirect('novations')
         else:
             messages.error(request, "Invalid username or password")
 
@@ -27,8 +23,8 @@ def login_view(request):
 def logout_view(request):
     logout(request)
 
+    return redirect('novations') 
 
-    return redirect('homepage') 
 def register_view(request):
     if request.method == "POST":
         username = request.POST.get('username')
@@ -52,7 +48,7 @@ def register(request):
             user = form.save()
             login(request, user)
             messages.success(request, "Registration successful")
-            return redirect('homepage')
+            return redirect('novations')
     else:
         form = RegistrationForm()
     return render(request, 'auth_system/register.html', {'form': form})
