@@ -5,10 +5,12 @@
 
 .big_title {
     font: bold 50px "Bahnschrift Light";
+    margin: 10px 0px 0px 10px;
 }
 
 .small_title {
     font: 35px "Bahnschrift Light";
+    margin: 8px 0px 0px 8px;
 }
 
 nav {
@@ -91,4 +93,7 @@ nav {
 .avatar{
     max-width: 20%; 
     border-radius: 50%; 
+}
+header .title{
+    margin: 10px 0px 10px 0px;
 }
