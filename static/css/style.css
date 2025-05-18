@@ -59,7 +59,7 @@ nav {
 
 .theme-switch img {
     width: 30px;
-    height: 30px;
+
     transition: transform 0.3s, opacity 0.3s;
 }
 
