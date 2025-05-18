@@ -18,7 +18,7 @@ nav {
     justify-content: space-around;
     display: flex;
     background-color: rgba(0, 0, 0, 0.1);
-    padding: 0 5px 5px 5px;
+    padding: 5px;
     border-radius: 5px;
     margin: 0 10px 0 10px;
 }
@@ -43,12 +43,16 @@ nav {
 
 .theme-switch {
     display: inline-flex;
+    align-items: center;
+    justify-content: center;
     padding: 5px;
     border-radius: 50%;
     transition: background-color 0.3s;
     background-color: rgba(0, 0, 0, 0.1);
-    margin: 10px;
+    margin: 0 5px;
     cursor: pointer;
+    height: 30px;
+    width: 30px;
 }
 
 .theme-switch:hover {
@@ -74,26 +78,69 @@ nav {
     opacity: 0;
     transition: opacity 0.3s;
 }
+
 .profile-forum-box {
     background-color: rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     padding: 20px;
     margin: 20px;
-
 }
-.container-list{
+
+.container-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;    
+    justify-content: space-evenly;
     margin-top: 48px;
-    margin-left: 24px;
-    margin-right: 24px;
-    margin-bottom: 0px;
 }
-.avatar{
-    max-width: 20%; 
-    border-radius: 50%; 
+
+.avatar {
+    max-width: 20%;
+    border-radius: 50%;
 }
-header .title{
+
+header .title {
     margin: 10px 0px 10px 0px;
+}
+
+/* Стилі для основного контенту */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    margin: 0;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+}
+
+footer {
+    margin-top: auto;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+}
+
+/* Стилі для контенту між header і footer */
+.container {
+    margin: 10px 0 0 10px;
+    padding: 10px;
+    flex: 1;
+}
+
+/* Стилі для елементів всередині контенту */
+.container > * {
+    margin-bottom: 10px;
+}
+
+/* Стилі для порожніх блоків */
+.empty-message {
+    margin: 10px 0 0 10px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
 }

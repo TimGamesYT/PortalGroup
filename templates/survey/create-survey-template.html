@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load static %}
-        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
     <form method="POST" action="{% url 'create-survey' %}">
         {% csrf_token %}
         {{ form.as_p }}
