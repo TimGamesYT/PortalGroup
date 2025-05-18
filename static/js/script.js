@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const lightTheme = document.getElementById('light-theme');
     const darkTheme = document.getElementById('dark-theme');
 
+    // Перевіряємо збережену тему в localStorage
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
         setDarkTheme();
@@ -10,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
         setLightTheme();
     }
 
+    // Додаємо обробник події для перемикача теми
     themeToggle.addEventListener('click', function() {
         if (themeToggle.src.includes('moon.png')) {
             setLightTheme();
@@ -22,8 +24,8 @@ document.addEventListener('DOMContentLoaded', function() {
         lightTheme.disabled = true;
         darkTheme.disabled = false;
         localStorage.setItem('theme', 'dark');
-    
-        // Плавна зміна зображення з анімацією
+
+        // Плавна зміна зображення
         themeToggle.classList.add('fade-out');
         setTimeout(() => {
             themeToggle.src = themeToggle.getAttribute('data-dark-src');
@@ -34,13 +36,13 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 200);
         }, 300);
     }
-    
+
     function setLightTheme() {
         lightTheme.disabled = false;
         darkTheme.disabled = true;
         localStorage.setItem('theme', 'light');
-    
-        // Плавна зміна зображення з анімацією
+
+        // Плавна зміна зображення
         themeToggle.classList.add('fade-out');
         setTimeout(() => {
             themeToggle.src = themeToggle.getAttribute('data-light-src');
@@ -50,5 +52,5 @@ document.addEventListener('DOMContentLoaded', function() {
                 themeToggle.style.transform = 'scale(1)';
             }, 200);
         }, 300);
-    }    
+    }
 });

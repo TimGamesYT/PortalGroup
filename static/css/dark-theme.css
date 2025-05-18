@@ -29,6 +29,7 @@ header, footer {
     background-color: rgba(255, 255, 255, 0.3);
 } */
 /* dark-theme.css */
+/* dark-theme.css */
 :root {
     --primary-color: #121212;
     --secondary-color: #00cc00;
@@ -96,75 +97,4 @@ nav {
 .avatar {
     border: 1px solid var(--secondary-color);
     box-shadow: 0 0 10px var(--shadow-color);
-}
-
-
-
-
-
-
-
-
-
-
-
-body {
-    background-color: #0a0a0a;
-    color: #00cc00;
-}
-
-header, footer {
-    background-color: #1a1a1a;
-    color: #00cc00;
-}
-
-.section_button {
-    background-color: rgba(0, 204, 0, 0.1);
-    color: #00cc00;
-    border: 1px solid #00cc00;
-    box-shadow: 0 0 10px rgba(0, 204, 0, 0.5);
-}
-
-.section_button:hover {
-    background-color: rgba(0, 204, 0, 0.2);
-    box-shadow: 0 0 15px rgba(0, 204, 0, 0.7);
-}
-
-.theme-switch {
-    background-color: rgba(0, 204, 0, 0.1);
-    border: 1px solid #00cc00;
-    box-shadow: 0 0 10px rgba(0, 204, 0, 0.5);
-}
-
-.theme-switch:hover {
-    background-color: rgba(0, 204, 0, 0.2);
-    box-shadow: 0 0 15px rgba(0, 204, 0, 0.7);
-}
-
-.theme-switch:active {
-    background-color: rgba(0, 204, 0, 0.3);
-    box-shadow: 0 0 20px rgba(0, 204, 0, 0.9);
-}
-
-nav {
-    background-color: rgba(0, 204, 0, 0.1);
-    border: 1px solid #00cc00;
-    box-shadow: 0 0 10px rgba(0, 204, 0, 0.5);
-}
-
-.profile-forum-box {
-    background-color: rgba(0, 204, 0, 0.1);
-    border: 1px solid #00cc00;
-    box-shadow: 0 0 10px rgba(0, 204, 0, 0.5);
-}
-
-.container-list {
-    background-color: rgba(0, 204, 0, 0.1);
-    border: 1px solid #00cc00;
-    box-shadow: 0 0 10px rgba(0, 204, 0, 0.5);
-}
-
-.avatar {
-    border: 1px solid #00cc00;
-    box-shadow: 0 0 10px rgba(0, 204, 0, 0.5);
 }

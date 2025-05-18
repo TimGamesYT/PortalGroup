@@ -1,13 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load static %}
-        <link rel="stylesheet" href="{% static 'css/style.css' %}">
-<!DOCTYPE html>
-<html>
-<head>
-    <title>{{ question.text }}</title>
-</head>
-<body>
+
     <h1>{{ question.text }}</h1>
     <form method="post">
         {% csrf_token %}
@@ -17,6 +11,4 @@
 
     <a href="{% url 'survey' %}">Повернутися до опитування</a>
 
-</body>
-</html>
 {% endblock %}

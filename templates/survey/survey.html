@@ -1,19 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load static %}
-        <link rel="stylesheet" href="{% static 'css/style.css' %}">
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Survey</title>
-</head>
-<body>
     <h1>Survey</h1>
     <ul>
         {% for question in questions %}
             <li><a href="{% url 'question_detail' question.id %}">{{ question.text }}</a></li>
         {% endfor %}
     </ul>
-</body>
-</html>
 {% endblock %}

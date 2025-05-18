@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load static %}
-        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
     <h3>{{ post.short_description }}</h3>
     <p><strong>{{ post.author.username }}</strong> {{ post.created_at }}</p>
 
