@@ -1,18 +1,20 @@
 {% extends 'base.html' %}
-{% block content %}
-{% load static %}
 
-    <div>
+{% block content %}
+    <div class="profile-forum-box">
         <h1>Форум</h1>
         <a href="{% url 'create-post' %}"><button>Створити пост</button></a>
-        <div class="forum-posts">
-            {% for post in posts %}
-                <div class="forum-post">
-                    <h3>{{ post.short_description }} створений <strong>{{ post.author }}</strong> {{ post.created_at }}</h3>
 
-                    <a href="{% url 'post-detail' post.pk %}"><button>Деталі</button></a>
-                </div>
-            {% endfor %}
+        <div class="profile-forum-box">
+            <div class="forum-posts">
+                {% for post in posts %}
+                    <div class="forum-post">
+                        <h3>{{ post.short_description }} створений <strong>{{ post.author }}</strong> {{ post.created_at }}</h3>
+
+                        <a href="{% url 'post-detail' post.pk %}"><button>Деталі</button></a>
+                    </div>
+                {% endfor %}
+            </div>
         </div>
     </div>
 {% endblock %}

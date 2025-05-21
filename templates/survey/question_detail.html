@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
-{% block content %}
-{% load static %}
 
+{% block content %}
     <h1>{{ question.text }}</h1>
     <form method="post">
         {% csrf_token %}
@@ -10,5 +9,4 @@
     </form>
 
     <a href="{% url 'survey' %}">Повернутися до опитування</a>
-
 {% endblock %}

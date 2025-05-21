@@ -2,15 +2,14 @@
 <html lang="en">
 
 <head>
-    <link rel="shortcut icon" href="static/favicons/site_icon.ico">
-
+    {% load static %}
+    <title>Team über IT-Spezialisten</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% load static %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/light-theme.css' %}" id="light-theme">
     <link rel="stylesheet" href="{% static 'css/dark-theme.css' %}" id="dark-theme" disabled>
-    <title>Team über IT-Spezialisten</title>
+    <link rel="shortcut icon" href="{% static 'favicons/site_icon.ico' %}">
 </head>
 
 <body class="light-theme">
@@ -24,6 +23,7 @@
             <a href="{% url 'survey' %}"><button class="section_button">Опитування</button></a>
             <a href="{% url 'forum' %}"><button class="section_button">Форум</button></a>
             <a href="{% url 'notification-list' %}"><button class="section_button">Сповіщення</button></a>
+            <a href="{% url 'materials-list' %}"><button class="section_button">Матеріали</button></a>
 
             {% if request.user.is_authenticated %}
                 <a href="{% url 'logout' %}"><button class="section_button">Вийти</button></a>
@@ -51,6 +51,11 @@
     </div>
 
     <footer>
+        <div class="footer-content">
+            <h1>Team über IT-Spezialisten</h1>
+            <p>All rights reserved</p>
+            <p>Для зв'язку: +38045839234853</p>
+        </div>
         {% block footer %}
         {% endblock %}
     </footer>

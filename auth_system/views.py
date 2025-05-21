@@ -16,7 +16,7 @@ def login_view(request):
             
             return redirect('novations')
         else:
-            messages.error(request, "Invalid username or password")
+            messages.error(request, "Неправильне ім'я користувача або пароль")
 
     return render(request, 'auth_system/login.html')
 
@@ -25,29 +25,13 @@ def logout_view(request):
 
     return redirect('novations') 
 
-def register_view(request):
-    if request.method == "POST":
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-        password_confirm = request.POST.get('password_confirm')
-
-        if password == password_confirm:
-            user = User.objects.create_user(username=username, password=password)
-            user.save()
-            messages.success(request, "Registration successful")
-            return redirect('login') 
-        else:
-            messages.error(request, "Passwords do not match")
-
-    return render(request, 'auth_system/register.html')
-
 def register(request):
     if request.method == "POST":
         form = RegistrationForm(request.POST)
         if form.is_valid():
             user = form.save()
             login(request, user)
-            messages.success(request, "Registration successful")
+            
             return redirect('novations')
     else:
         form = RegistrationForm()

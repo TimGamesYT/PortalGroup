@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load customtags %}
+
+{% block content %}
+    <h1>Матеріали</h1>
+    <a href="{% url 'create-material' %}"><button>Створити матеріал</button></a>
+
+    {% for material in materials %}
+        <div class="profile-forum-box" style="display: flex; flex-direction: column;">
+            {{ material.description }}
+
+            {% if material.media.url|is_image %}
+                <img src="{{ material.media.url }}" alt="Зображення матеріалу" style="max-width: 250px;">
+            {% elif material.media.url|is_video %}
+                <video width="320" height="240" controls>
+                    <source src="{{ material.media.url }}">
+                    Your browser does not support the video tag.
+                </video>
+            {% elif material.media.url|is_audio %}
+                <audio controls>
+                    <source src="{{ material.media.url }}">
+                    Your browser does not support the audio element.
+                </audio>
+            {% elif material.media.url|is_document %}
+                <a href="{{ material.media.url }}" target="_blank">Переглянути документ</a>
+            {% elif material.media.url %}
+                <a href="{{ material.media.url }}">Завантажити файл</a>
+            {% endif %}
+
+            <a href="{% url 'delete-material' material.pk %}"><button>Видалити</button></a>
+        </div>
+    {% empty %}
+        Немає матеріалів.
+    {% endfor %}
+{% endblock %}

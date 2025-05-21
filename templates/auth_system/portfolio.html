@@ -1,23 +1,21 @@
 {% extends "base.html" %}
+
 {% block content %}
-{% load static %}
+    <img src="{{ user.profile.avatar.url }}" alt="avatar" onerror="this.onerror=null; this.src='/static/img/default_avatar.png';" class="avatar">
+    <h1>Профіль</h1>
+    {{ user.username }} - {{ user.email }}
+    {{ user.first_name }} {{ user.last_name }}
+    <h2>Ваші пости:</h2>
 
-        <img src="{{ user.profile.avatar.url }}" alt="avatar" onerror="this.onerror=null; this.src='/static/img/default_avatar.png';" class="avatar">
-        <h1>Портфоліо</h1>
-        {{ user.username }} - {{ user.email }}
-        {{ user.first_name }} {{ user.last_name }}
-        <h2>Ваші пости:</h2>
-
-        <div class="container-list">
-        {% for post in my_posts %}
-            <div class="profile-forum-box">
-                <h3>{{ post.short_description }}</h3>
-                <p>{{ post.content }}</p>
-                <p>Дата: {{ post.created_at }}</p>
-            </div>
-        {% empty %}
-            <p>У вас немає постів.</p>
-        {% endfor %}
+    <div class="container-list">
+    {% for post in my_posts %}
+        <div class="profile-forum-box">
+            <h3>{{ post.short_description }}</h3>
+            <p>{{ post.content }}</p>
+            <p>Дата: {{ post.created_at }}</p>
         </div>
-        
+    {% empty %}
+        <p>У вас немає постів.</p>
+    {% endfor %}
+    </div> 
 {% endblock %}

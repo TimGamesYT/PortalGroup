@@ -43,7 +43,7 @@ body {
     color: var(--text-color);
 }
 
-header, footer {
+header {
     background-color: var(--primary-color);
     color: var(--text-color);
 }
