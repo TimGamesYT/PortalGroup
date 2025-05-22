@@ -1,16 +1,16 @@
 {% extends 'base.html' %}
+
 {% block content %}
     <h1>Сповіщення</h1>
     <a href="{% url 'mark-all-as-read' %}"><button>Позначити всі як прочитані</button></a>
-    <ul>
-        {% for notification in notifications %}
-            <li>{{ notification.message }} - {{ notification.created_at }}</li>
+    {% for notification in notifications %}
+        <div class="profile-forum-box">{{ notification.message }} - {{ notification.created_at }}
             {% if notification.is_read %}
                 <span>(Прочитано)</span>
             {% else %}
                 <span>(Не прочитано)</span>
                 <a href="{% url 'mark-as-read' notification.id %}"><button>Позначити як прочитано</button></a>
             {% endif %}
-        {% endfor %}
-    </ul>
+        </div>
+    {% endfor %}
 {% endblock %}

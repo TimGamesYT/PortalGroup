@@ -21,16 +21,15 @@ nav {
     padding: 5px;
     border-radius: 5px;
     margin: 0 10px 0 10px;
+    flex-wrap: wrap;
 }
 
 .section_button {
     background-color: rgba(0, 0, 0, 0.1);
     border: 0px;
     padding: 10px 40px 10px 40px;
-    margin: 0px 5px 0px 5px;
-    font: bold 18px "Bahnschrift Light";
-    margin-left: -4px;
-    cursor: pointer;
+    margin: 5px;
+    cursor: pointer;    
 }
 
 .section_button:hover {
@@ -91,6 +90,7 @@ nav {
     flex-wrap: wrap;
     justify-content: space-evenly;
     margin-top: 48px;
+    border-radius: 5px;
 }
 
 .avatar {
@@ -115,14 +115,18 @@ header {
     margin: 0;
     padding: 10px;
     background-color: rgba(0, 0, 0, 0.05);
-    border-radius: 5px;
+    border-radius: 0px 0px 5px 5px;
 }
 
 footer {
     margin-top: auto;
     padding: 10px;
-    background-color: rgba(0, 0, 0, 0.05);
-    border-radius: 5px;
+    background-color: rgb(19, 19, 19);
+    height: auto;  
+}
+
+footer > * {
+    color: white;
 }
 
 /* Стилі для контенту між header і footer */

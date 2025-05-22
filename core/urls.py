@@ -26,4 +26,5 @@ urlpatterns = [
     path('survey/', include('survey.urls')),
     path('notifications/', include('notifications.urls')),
     path('', include('news.urls')),
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    path('materials/', include('materials.urls')),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

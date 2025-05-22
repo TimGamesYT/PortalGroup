@@ -34,7 +34,7 @@ def create_post_view(request):
 
             return redirect('forum')
         else: 
-            messages.error("Перевірте форму і повторіть спробу")
+            messages.error(request, "Перевірте форму і повторіть спробу")
     else:
         form = forms.CreatePostForm()
 
@@ -63,7 +63,7 @@ def edit_post_view(request, pk):
 
             return redirect('forum')
         else:
-            messages.error("Перевірте форму і повторіть спробу")
+            messages.error(request, "Перевірте форму і повторіть спробу")
     else:
         form = forms.EditPostForm()
     
@@ -105,7 +105,7 @@ def create_comment_view(request, pk):
 
             return redirect('post-detail', pk=pk)
         else:
-            messages.error("Перевірте форму і повторіть спробу")
+            messages.error(request, "Перевірте форму і повторіть спробу")
     else:
         form = forms.CreateCommentForm()
 
@@ -130,7 +130,7 @@ def edit_comment_view(request, pk):
 
             return redirect('post-detail', pk=comment.post.pk)
         else:
-            messages.error("Перевірте форму і повторіть спробу")
+            messages.error(request, "Перевірте форму і повторіть спробу")
     else:
         form = forms.EditCommentForm()
     

@@ -1,14 +1,15 @@
 {% extends 'base.html' %}
+
 {% block content %}
-{% load static %}
+    <div class="profile-forum-box">
+        <h3>{{ post.short_description }}</h3>
+        <p><strong>{{ post.author.username }}</strong> {{ post.created_at }}</p>
 
-    <h3>{{ post.short_description }}</h3>
-    <p><strong>{{ post.author.username }}</strong> {{ post.created_at }}</p>
+        <a href="{% url 'edit-post' post.pk %}"><button>Редагувати</button></a>
+        <a href="{% url 'delete-post' post.pk %}"><button>Видалити</button></a>
 
-    <a href="{% url 'edit-post' post.pk %}"><button>Редагувати</button></a>
-    <a href="{% url 'delete-post' post.pk %}"><button>Видалити</button></a>
-
-    <p>{{ post.content }}</p>
+        <p>{{ post.content }}</p>
+    </div>
 
     <hr>
 

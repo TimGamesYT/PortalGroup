@@ -1,6 +1,5 @@
 from django.db import models
 
-
 # Create your models here.
 # QUESTION_CHOICES = [('text', 'Text'),
 #                     ('choice', 'Choice'),
