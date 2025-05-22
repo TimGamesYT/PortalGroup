@@ -5,7 +5,7 @@
     <h1>Матеріали</h1>
     <a href="{% url 'create-material' %}"><button>Створити матеріал</button></a>
 
-    {% for material in materials %}
+    {% for materials in material %}
         <div class="profile-forum-box" style="display: flex; flex-direction: column;">
             {{ material.description }}
 
