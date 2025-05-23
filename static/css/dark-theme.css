@@ -98,3 +98,8 @@ nav {
     border: 1px solid var(--secondary-color);
     box-shadow: 0 0 10px var(--shadow-color);
 }
+.box{
+    background-color: rgba(0, 204, 0, 0.1);
+    border: 1px solid var(--secondary-color);
+    box-shadow: 0 0 10px var(--shadow-color);
+}

@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login, logout, authenticate
 from django.contrib import messages
 from django.contrib.auth.models import User
-from .forms import RegistrationForm
+from .forms import RegistrationForm, EditProfileForm
 from forum.models import Post
 
 def login_view(request):
@@ -46,3 +46,14 @@ def portfolio(request):
         'user': request.user,
     }
     return render(request, 'auth_system/portfolio.html', context)
+
+def edit_portfolio(request):
+    profile, created = portfolio.objects.get_or_create(user=request.user)
+    if request.method == 'POST':
+        form = EditProfileForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('portfolio')
+        else:
+            form = EditProfileForm()
+    return render(request, 'auth_system/edit_profile.html' )
