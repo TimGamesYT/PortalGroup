@@ -6,8 +6,8 @@
         <p>Ви впевнені що хочете видалити цей матеріал?</p>
         <form method="POST">
             {% csrf_token %}
-            <button type="submit">Видалити</button>
+            <button class="button" type="submit">Видалити</button>
         </form>
-        <a href="{% url 'materials-list' %}"><button>Відмінити</button></a>
+        <a href="{% url 'materials-list' %}"><button class="button">Відмінити</button></a>
     </div>
 {% endblock %}

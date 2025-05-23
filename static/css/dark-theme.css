@@ -53,6 +53,8 @@ header {
     color: var(--text-color);
     border: 1px solid var(--secondary-color);
     box-shadow: 0 0 10px var(--shadow-color);
+    padding: 10px 40px 10px 40px;
+    margin: 5px;
 }
 
 .section_button:hover {
@@ -99,7 +101,8 @@ nav {
     box-shadow: 0 0 10px var(--shadow-color);
 }
 
-footer {
+
+footer {  
     background-color: rgba(0, 204, 0, 0.1);
     color: var(--text-color);
     border: 1px solid var(--secondary-color);

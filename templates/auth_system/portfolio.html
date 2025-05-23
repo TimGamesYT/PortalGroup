@@ -1,10 +1,17 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <img src="{{ user.profile.avatar.url }}" alt="avatar" onerror="this.onerror=null; this.src='/static/img/default_avatar.png';" class="avatar">
-    <h1>Профіль</h1>
-    {{ user.username }} - {{ user.email }}
-    {{ user.first_name }} {{ user.last_name }}
+    <div class="profile-info profile-forum-box">
+        <img src="{{ user.profile.avatar.url }}" alt="avatar" onerror="this.onerror=null; this.src='/static/img/default_avatar.png';" class="avatar">
+        <div class="profile-name-bio">
+            <div class="sort box">
+                <a>{{ user.username }} -  </a>
+                <a>{{ user.email }}</a>
+            </div>
+            <p class="box">{{ user.profile.bio}}</p>
+        </div>
+        <!-- <button><a href="{% url 'edit_portfolio' %}">edit</a></button> -->
+    </div>
     <h2>Ваші пости:</h2>
 
     <div class="container-list">
