@@ -107,3 +107,19 @@ footer {
     color: #0000EE;
     box-shadow: 0 0 10px var(--shadow-color);
 }
+
+.button {
+    background-color: rgba(0, 119, 204, 0.1);
+    border: 0px;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.button:active {
+    background-color: rgba(0, 0, 0, 0.3);
+}
