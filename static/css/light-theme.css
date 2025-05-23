@@ -98,3 +98,10 @@ nav {
     border: 1px solid var(--secondary-color);
     box-shadow: 0 0 10px var(--shadow-color);
 }
+
+footer {
+    background-color: rgba(0, 119, 204, 0.1);
+    border: 1px solid var(--secondary-color);
+    color: #0000EE;
+    box-shadow: 0 0 10px var(--shadow-color);
+}
