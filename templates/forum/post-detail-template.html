@@ -5,8 +5,8 @@
         <h3>{{ post.short_description }}</h3>
         <p><strong>{{ post.author.username }}</strong> {{ post.created_at }}</p>
 
-        <a href="{% url 'edit-post' post.pk %}"><button>Редагувати</button></a>
-        <a href="{% url 'delete-post' post.pk %}"><button>Видалити</button></a>
+        <a href="{% url 'edit-post' post.pk %}"><button class="button">Редагувати</button></a>
+        <a href="{% url 'delete-post' post.pk %}"><button class="button">Видалити</button></a>
 
         <p>{{ post.content }}</p>
     </div>
@@ -18,8 +18,8 @@
         <div class="comment">
             <p><strong>{{ comment.author.username }}</strong> {{ comment.created_at }}</p>
             <p>{{ comment.content }}</p>
-            <a href="{% url 'edit-comment' comment.pk %}"><button>Редагувати</button></a>
-            <a href="{% url 'delete-comment' comment.pk %}"><button>Видалити</button></a>
+            <a href="{% url 'edit-comment' comment.pk %}"><button class="button">Редагувати</button></a>
+            <a href="{% url 'delete-comment' comment.pk %}"><button class="button">Видалити</button></a>
         </div>
 
         <br>
@@ -29,7 +29,7 @@
     <form method="POST" action="{% url 'create-comment' post.pk %}">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Створити</button>
+        <button class="button" type="submit">Створити</button>
     </form>
     
 {% endblock %}

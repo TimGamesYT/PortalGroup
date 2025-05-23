@@ -3,6 +3,8 @@
 {% block content %}
     <h1>Опитування</h1>
     {% for question in questions %}
-        <div class="profile-forum-box"><a href="{% url 'question_detail' question.id %}">{{ question.text }}</a></div>
+        <div class="profile-forum-box">
+            <a class="button" href="{% url 'question_detail' question.id %}">{{ question.text }}</a>
+        </div>
     {% endfor %}
 {% endblock %}

@@ -3,7 +3,7 @@
 
 {% block content %}
     <h1>Матеріали</h1>
-    <a href="{% url 'create-material' %}"><button>Створити матеріал</button></a>
+    <a href="{% url 'create-material' %}"><button class="button">Створити матеріал</button></a>
 
     {% for material in materials %}
         <div class="profile-forum-box" style="display: flex; flex-direction: column;">
@@ -22,12 +22,12 @@
                     Your browser does not support the audio element.
                 </audio>
             {% elif material.media.url|is_document %}
-                <a href="{{ material.media.url }}" target="_blank">Переглянути документ</a>
+                <a href="{{ material.media.url }}" target="_blank"><button class="button">Переглянути документ</button></a>
             {% elif material.media.url %}
-                <a href="{{ material.media.url }}">Завантажити файл</a>
+                <a href="{{ material.media.url }}"><button class="button">Завантажити файл</button></a>
             {% endif %}
 
-            <a href="{% url 'delete-material' material.pk %}"><button>Видалити</button></a>
+            <a href="{% url 'delete-material' material.pk %}"><button class="button">Видалити</button></a>
         </div>
     {% empty %}
         Немає матеріалів.
