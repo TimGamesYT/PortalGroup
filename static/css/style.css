@@ -24,22 +24,6 @@ nav {
     flex-wrap: wrap;
 }
 
-.section_button {
-    background-color: rgba(0, 0, 0, 0.1);
-    border: 0px;
-    padding: 10px 40px 10px 40px;
-    margin: 5px;
-    cursor: pointer;    
-}
-
-.section_button:hover {
-    background-color: rgba(0, 0, 0, 0.2);
-}
-
-.section_button:active {
-    background-color: rgba(0, 0, 0, 0.3);
-}
-
 .theme-switch {
     display: inline-flex;
     align-items: center;
@@ -148,3 +132,4 @@ footer > * {
     background-color: rgba(0, 0, 0, 0.05);
     border-radius: 5px;
 }
+
