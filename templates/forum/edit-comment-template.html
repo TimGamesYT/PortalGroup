@@ -6,8 +6,8 @@
         <form method="POST" action="{% url 'edit-comment' comment.pk %}">
             {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit">Зберегти зміни</button>
+            <button class="button" type="submit">Зберегти зміни</button>
         </form>
-        <a href="{% url 'post-detail' comment.post.pk %}"><button>Відмінити</button></a>
+        <a href="{% url 'post-detail' comment.post.pk %}"><button class="button">Відмінити</button></a>
     </div>
 {% endblock %}

@@ -53,6 +53,8 @@ header {
     color: var(--text-color);
     border: 1px solid var(--secondary-color);
     box-shadow: 0 0 10px var(--shadow-color);
+    padding: 10px 40px 10px 40px;
+    margin: 5px;
 }
 
 .section_button:hover {
@@ -98,8 +100,29 @@ nav {
     border: 1px solid var(--secondary-color);
     box-shadow: 0 0 10px var(--shadow-color);
 }
+
 .box{
     background-color: rgba(0, 204, 0, 0.1);
     border: 1px solid var(--secondary-color);
     box-shadow: 0 0 10px var(--shadow-color);
+}
+
+.button {
+    background-color: rgba(0, 204, 0, 0.1);
+    color: var(--text-color);
+    border: 1px solid var(--secondary-color);
+    box-shadow: 0 0 10px var(--shadow-color);
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+   
+}
+
+.button:hover {
+    background-color: var(--secondary-color);
+}
+
+.button:active {
+    background-color: var(--secondary-color);
+    box-shadow: inset 0 0 20px var(--shadow-color);
 }

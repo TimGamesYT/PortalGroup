@@ -6,8 +6,8 @@
         <p>Ви впевнені що хочете видалити цей коментар?</p>
         <form method="POST" action="{% url 'delete-comment' comment.pk %}">
             {% csrf_token %}
-            <button type="submit">Видалити</button>
+            <button class="button" type="submit">Видалити</button>
         </form>
-        <a href="{% url 'post-detail' comment.post.pk %}"><button>Відмінити</button></a>
+        <a href="{% url 'post-detail' comment.post.pk %}"><button class="button">Відмінити</button></a>
     </div>
 {% endblock %}
