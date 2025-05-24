@@ -94,8 +94,7 @@ nav {
 
 .avatar {
     max-width: 250px;
-
-    /* max-width: 20%; */
+    min-width: auto;
     border-radius: 50%; 
 }
 
