@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'notifications',
     'news',
     'materials',
+    'events',
 ]
 
 MIDDLEWARE = [

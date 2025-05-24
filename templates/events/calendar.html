@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Календар подій</h1>
+
+<a href="{% url 'events:add_event' %}">➕ Додати подію</a>
+
+<ul>
+    {% for event in events %}
+    <li>
+        <li>
+    <strong>{{ event.title }}</strong><br>
+    {{ event.start_time|date:"d M Y H:i" }} - {{ event.end_time|date:"d M Y H:i" }}<br>
+    {{ event.description }}<br>
+
+    <form action="{% url 'events:delete_event' event.id %}" method="post" style="display:inline;">
+        {% csrf_token %}
+        <button type="submit" onclick="return confirm('Точно видалити подію?');">🗑 Видалити</button>
+    </form>
+</li>
+
+    {% endfor %}
+</ul>
+{% endblock %}
