@@ -23,3 +23,7 @@ class RegistrationForm(UserCreationForm):
             self.fields[fieldname].help_text = None
 
 
+class EditProfileForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = ('avatar', 'bio')

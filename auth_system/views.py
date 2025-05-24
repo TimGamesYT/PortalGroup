@@ -2,10 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login, logout, authenticate
 from django.contrib import messages
 from django.contrib.auth.models import User
-from .forms import RegistrationForm
+from .forms import RegistrationForm, EditProfileForm
 from forum.models import Post
-from .models import Profile
-from django.http import HttpResponse
 
 def login_view(request):
     if request.method == "POST":
@@ -50,18 +48,12 @@ def portfolio(request):
     return render(request, 'auth_system/portfolio.html', context)
 
 def edit_portfolio(request):
-    if request.method == "POST":
-        avatar = request.POST.get("image")
-        bio = request.POST.get("bio")
-        try:
-            # user = profile.objects.get()
-            pass
-        except Profile.DoesNotExist:
-            return HttpResponse("not exist", status=404)
-        profile = Profile.objects.aupdate(
-            user=request.user,
-            avatar=avatar,
-            bio=bio
-        )
-    else:
-        return render(request, 'auth_system/edit_profile.html' )
+    profile, created = portfolio.objects.get_or_create(user=request.user)
+    if request.method == 'POST':
+        form = EditProfileForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('portfolio')
+        else:
+            form = EditProfileForm()
+    return render(request, 'auth_system/edit_profile.html' )
