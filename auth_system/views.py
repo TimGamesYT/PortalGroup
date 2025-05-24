@@ -2,10 +2,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import login, logout, authenticate
 from django.contrib import messages
 from django.contrib.auth.models import User
-from .forms import RegistrationForm
+from .forms import RegistrationForm, EditProfileForm
 from forum.models import Post
-from .models import Profile
-from django.http import HttpResponse
 
 def login_view(request):
     if request.method == "POST":
@@ -61,3 +59,15 @@ def edit_portfolio(request):
         return redirect('portfolio')
     else:
         return render(request, 'auth_system/edit_profile.html', {'profile': profile} )
+
+
+
+    # profile, created = portfolio.objects.get_or_create(user=request.user)
+    # if request.method == 'POST':
+    #     form = EditProfileForm(request.POST)
+    #     if form.is_valid():
+    #         form.save()
+    #         return redirect('portfolio')
+    #     else:
+    #         form = EditProfileForm()
+    # return render(request, 'auth_system/edit_profile.html' )
