@@ -9,10 +9,3 @@ class EventForm(forms.ModelForm):
             'start_time': forms.DateTimeInput(attrs={'type': 'datetime-local'}),
             'end_time': forms.DateTimeInput(attrs={'type': 'datetime-local'}),
         }
-
-        labels = {
-            'title': 'Назва події',
-            'description': 'Опис події',
-            'start_time': 'Час початку',
-            'end_time': 'Час закінчення',
-        }

@@ -2,10 +2,10 @@
 {% block content %}
 <h1>Календар подій</h1>
 
-<button class="button"><a href="{% url 'events:add_event' %}">➕ Додати подію</a></button>
+<a href="{% url 'events:add_event' %}">➕ Додати подію</a>
 
 <ul>
-    {% for events in event %}
+    {% for event in events %}
     <li>
         <li>
     <strong>{{ event.title }}</strong><br>
