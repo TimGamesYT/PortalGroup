@@ -27,9 +27,9 @@ nav {
 .section_button {
     background-color: rgba(0, 0, 0, 0.1);
     border: 0px;
-    padding: 10px 30px 10px 30px;
+    padding: 10px 20px 10px 20px;
     margin: 5px;
-    cursor: pointer;    
+    cursor: pointer;
 }
 
 .section_button:hover {
