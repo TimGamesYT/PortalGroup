@@ -22,7 +22,7 @@
                     Your browser does not support the audio element.
                 </audio>
             {% elif material.media.url %}
-                <a href="{{ material.media.url }}"><button class="button">Завантажити файл</button></a>
+                <a href="{{ material.media.url }}" download><button class="button">Завантажити файл</button></a>
             {% endif %}
 
             <a href="{% url 'delete-material' material.pk %}"><button class="button">Видалити</button></a>
