@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import login, logout, authenticate
 from django.contrib import messages
 from django.contrib.auth.models import User
@@ -50,18 +50,14 @@ def portfolio(request):
     return render(request, 'auth_system/portfolio.html', context)
 
 def edit_portfolio(request):
+    profile = get_object_or_404(Profile, user=request.user)
     if request.method == "POST":
-        avatar = request.POST.get("image")
+        avatar = request.FILES.get("image")
         bio = request.POST.get("bio")
-        try:
-            # user = profile.objects.get()
-            pass
-        except Profile.DoesNotExist:
-            return HttpResponse("not exist", status=404)
-        profile = Profile.objects.aupdate(
-            user=request.user,
-            avatar=avatar,
-            bio=bio
-        )
+        profile.bio = bio
+        if avatar:
+            profile.avatar = avatar
+        profile.save()
+        return redirect('portfolio')
     else:
-        return render(request, 'auth_system/edit_profile.html' )
+        return render(request, 'auth_system/edit_profile.html', {'profile': profile} )
